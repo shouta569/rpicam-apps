@@ -10,6 +10,12 @@ rpicam_vid = executable('rpicam-vid', files('rpicam_vid.cpp'),
                         link_with : rpicam_app,
                         install : true)
 
+rpicam_lapse = executable('rpicam-lapse', files('rpicam_lapse.cpp'),
+                          include_directories : include_directories('..'),
+                          dependencies: [libcamera_dep, boost_dep],
+                          link_with : rpicam_app,
+                          install : true)
+
 rpicam_hello = executable('rpicam-hello', files('rpicam_hello.cpp'),
                           include_directories : include_directories('..'),
                           dependencies: libcamera_dep,
@@ -36,6 +42,10 @@ install_symlink('libcamera-still',
 install_symlink('libcamera-vid',
                 install_dir: get_option('bindir'),
                 pointing_to: 'rpicam-vid')
+
+install_symlink('libcamera-lapse',
+                install_dir: get_option('bindir'),
+                pointing_to: 'rpicam-lapse')
 
 install_symlink('libcamera-hello',
                 install_dir: get_option('bindir'),
