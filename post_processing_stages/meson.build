@@ -21,7 +21,6 @@ core_postproc_src = files([
     'motion_detect_stage.cpp',
     'negate_stage.cpp',
     'motion_extraction.cpp',
-    'color_shifted.cpp',
 ])
 
 # Core assets
